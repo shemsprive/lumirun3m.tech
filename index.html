@@ -2573,6 +2573,365 @@ footer{background:#000;padding:60px 40px 32px;border-top:1px solid rgba(255,255,
 
 </section>
 
+<!-- ═══ SECTION ÉVÉNEMENTS MAJEURS ═══ -->
+
+<section id="events" style="background:var(--beige);padding:100px 0;overflow:hidden" aria-labelledby="events-title">
+
+  <div style="padding:0 40px;max-width:1200px;margin:0 auto 48px" class="rv">
+    <div class="s-tag">// Calendrier 2026 · Événements majeurs</div>
+    <h2 class="s-tl" id="events-title">TES PROCHAINS<br><em>DÉFIS.</em></h2>
+    <p class="s-sub-l">Les événements incontournables de 2026 — running, trail, VTT, HYROX. Liens officiels vérifiés.</p>
+
+```
+<!-- Filtres -->
+<div style="display:flex;gap:8px;margin-top:32px;flex-wrap:wrap" role="tablist" aria-label="Filtrer par sport">
+  <button class="ev-filter active" onclick="filterEvents('all',this)" role="tab" aria-selected="true">TOUS</button>
+  <button class="ev-filter" onclick="filterEvents('running',this)" role="tab" aria-selected="false">🏃 RUNNING</button>
+  <button class="ev-filter" onclick="filterEvents('trail',this)" role="tab" aria-selected="false">🏔️ TRAIL</button>
+  <button class="ev-filter" onclick="filterEvents('vtt',this)" role="tab" aria-selected="false">🚵 VTT</button>
+  <button class="ev-filter" onclick="filterEvents('hyrox',this)" role="tab" aria-selected="false">🏋️ HYROX</button>
+  <button class="ev-filter" onclick="filterEvents('lifestyle',this)" role="tab" aria-selected="false">⚡ LIFESTYLE</button>
+</div>
+```
+
+  </div>
+
+  <!-- Grille événements -->
+
+  <div style="padding:0 40px;max-width:1200px;margin:0 auto">
+    <div id="events-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:2px;background:rgba(0,0,0,0.06)">
+
+```
+  <!-- HOKA SEMI DE PARIS -->
+  <a href="https://www.hokasemideparis.fr" target="_blank" rel="noopener" class="ev-card" data-sport="running" aria-label="HOKA Semi de Paris 2026">
+    <div class="ev-card-inner">
+      <div class="ev-top">
+        <span class="ev-date">8 MARS 2026</span>
+        <span class="ev-tag running">🏃 RUNNING</span>
+      </div>
+      <div class="ev-passed">ÉDITION PASSÉE</div>
+      <h3 class="ev-title">HOKA SEMI DE PARIS</h3>
+      <div class="ev-loc">📍 Paris — Bd Saint-Germain → Bastille</div>
+      <p class="ev-desc">Plus grand semi-marathon du monde. 50 000 coureurs. Parcours quasi plat idéal pour chrono. Tu l'as fait ! 🐺</p>
+      <div class="ev-specs">
+        <span class="ev-spec">21,1 km</span>
+        <span class="ev-spec">50 000 participants</span>
+        <span class="ev-spec">World Record Event</span>
+      </div>
+      <div class="ev-cta">hokasemideparis.fr →</div>
+    </div>
+  </a>
+
+  <!-- HYROX PARIS GRAND PALAIS -->
+  <a href="https://www.hyrox.com" target="_blank" rel="noopener" class="ev-card" data-sport="hyrox" aria-label="HYROX Paris Grand Palais 2026">
+    <div class="ev-card-inner">
+      <div class="ev-top">
+        <span class="ev-date">23-27 AVRIL 2026</span>
+        <span class="ev-tag hyrox">🏋️ HYROX</span>
+      </div>
+      <div class="ev-passed">ÉDITION PASSÉE</div>
+      <h3 class="ev-title">HYROX PARIS GRAND PALAIS</h3>
+      <div class="ev-loc">📍 Grand Palais, Paris 8e</div>
+      <p class="ev-desc">18 000 athlètes sous la verrière du Grand Palais. Le plus grand HYROX de France. 8km + 8 stations.</p>
+      <div class="ev-specs">
+        <span class="ev-spec">8km + 8 stations</span>
+        <span class="ev-spec">18 000 athlètes</span>
+        <span class="ev-spec">Open & Pro</span>
+      </div>
+      <div class="ev-cta">hyrox.com →</div>
+    </div>
+  </a>
+
+  <!-- MARATHON DE PARIS -->
+  <a href="https://www.schneiderelectricmaratondeparis.fr" target="_blank" rel="noopener" class="ev-card" data-sport="running" aria-label="Marathon de Paris 2027">
+    <div class="ev-card-inner">
+      <div class="ev-top">
+        <span class="ev-date">AVRIL 2027</span>
+        <span class="ev-tag running">🏃 RUNNING</span>
+      </div>
+      <span class="ev-badge">INSCRIPTIONS BIENTÔT</span>
+      <h3 class="ev-title">SCHNEIDER ELECTRIC MARATHON DE PARIS</h3>
+      <div class="ev-loc">📍 Champs-Élysées → Arc de Triomphe</div>
+      <p class="ev-desc">Le plus grand marathon du monde. 60 000 participants. Champs-Élysées, Bois de Vincennes, Bois de Boulogne.</p>
+      <div class="ev-specs">
+        <span class="ev-spec">42,195 km</span>
+        <span class="ev-spec">60 000 coureurs</span>
+        <span class="ev-spec">Gold Label FFA</span>
+      </div>
+      <div class="ev-cta">schneiderelectricmaratondeparis.fr →</div>
+    </div>
+  </a>
+
+  <!-- GRANDE COURSE GRAND PARIS -->
+  <a href="https://lagrandecourse.fr" target="_blank" rel="noopener" class="ev-card" data-sport="running" aria-label="La Grande Course du Grand Paris">
+    <div class="ev-card-inner">
+      <div class="ev-top">
+        <span class="ev-date">PRINTEMPS 2026</span>
+        <span class="ev-tag running">🏃 RUNNING</span>
+      </div>
+      <span class="ev-badge">ARRIVÉE STADE DE FRANCE</span>
+      <h3 class="ev-title">LA GRANDE COURSE DU GRAND PARIS</h3>
+      <div class="ev-loc">📍 Vincennes → Stade de France, Saint-Denis</div>
+      <p class="ev-desc">Semi-marathon, 10km, 5km éco-responsables. Arrivée mythique sur la piste du Stade de France.</p>
+      <div class="ev-specs">
+        <span class="ev-spec">Semi · 10km · 5km</span>
+        <span class="ev-spec">Éco-responsable</span>
+        <span class="ev-spec">Stade de France</span>
+      </div>
+      <div class="ev-cta">lagrandecourse.fr →</div>
+    </div>
+  </a>
+
+  <!-- HYROX LYON -->
+  <a href="https://hyrox.com" target="_blank" rel="noopener" class="ev-card" data-sport="hyrox" aria-label="HYROX Lyon 2026">
+    <div class="ev-card-inner">
+      <div class="ev-top">
+        <span class="ev-date">21-24 MAI 2026</span>
+        <span class="ev-tag hyrox">🏋️ HYROX</span>
+      </div>
+      <span class="ev-badge">PREMIÈRE ÉDITION</span>
+      <h3 class="ev-title">HYROX LYON</h3>
+      <div class="ev-loc">📍 Eurexpo Lyon</div>
+      <p class="ev-desc">Première édition lyonnaise de HYROX. Ville stratégique, très attendue par la communauté française.</p>
+      <div class="ev-specs">
+        <span class="ev-spec">8km + 8 stations</span>
+        <span class="ev-spec">1ère édition Lyon</span>
+        <span class="ev-spec">Tous niveaux</span>
+      </div>
+      <div class="ev-cta">hyrox.com →</div>
+    </div>
+  </a>
+
+  <!-- MÉGAVALANCHE -->
+  <a href="https://www.ucc-sportevent.com/megavalanche-alpe-dhuez" target="_blank" rel="noopener" class="ev-card" data-sport="vtt" aria-label="Mégavalanche 2026">
+    <div class="ev-card-inner">
+      <div class="ev-top">
+        <span class="ev-date">10-12 JUILLET 2026</span>
+        <span class="ev-tag vtt">🚵 VTT</span>
+      </div>
+      <span class="ev-badge">LÉGENDAIRE</span>
+      <h3 class="ev-title">MÉGAVALANCHE</h3>
+      <div class="ev-loc">📍 Alpe d'Huez — Pic Blanc 3330m → Allemond</div>
+      <p class="ev-desc">La descente VTT la plus mythique du monde. Mass Start depuis le glacier à 3330m. 2600m de dénivelé négatif sur 21km.</p>
+      <div class="ev-specs">
+        <span class="ev-spec">21 km</span>
+        <span class="ev-spec">-2600 m D-</span>
+        <span class="ev-spec">1500 riders</span>
+      </div>
+      <div class="ev-cta">ucc-sportevent.com →</div>
+    </div>
+  </a>
+
+  <!-- UTMB MONT-BLANC -->
+  <a href="https://montblanc.utmb.world" target="_blank" rel="noopener" class="ev-card" data-sport="trail" aria-label="UTMB Mont-Blanc 2026">
+    <div class="ev-card-inner">
+      <div class="ev-top">
+        <span class="ev-date">24-30 AOÛT 2026</span>
+        <span class="ev-tag trail">🏔️ TRAIL</span>
+      </div>
+      <span class="ev-badge">SOMMET MONDIAL DU TRAIL</span>
+      <h3 class="ev-title">HOKA UTMB MONT-BLANC</h3>
+      <div class="ev-loc">📍 Chamonix — France · Italie · Suisse</div>
+      <p class="ev-desc">La semaine trail la plus mythique au monde. 8 courses de 15 à 300km. UTMB 174km · CCC 101km · OCC 57km · TDS 148km.</p>
+      <div class="ev-specs">
+        <span class="ev-spec">174 km (UTMB)</span>
+        <span class="ev-spec">9900 m D+</span>
+        <span class="ev-spec">10 000 coureurs</span>
+      </div>
+      <div class="ev-cta">montblanc.utmb.world →</div>
+    </div>
+  </a>
+
+  <!-- ADIDAS RUNNERS -->
+  <a href="https://www.adidas.fr/running/adidas-runners" target="_blank" rel="noopener" class="ev-card" data-sport="lifestyle" aria-label="Adidas Runners Paris">
+    <div class="ev-card-inner">
+      <div class="ev-top">
+        <span class="ev-date">TOUTE L'ANNÉE</span>
+        <span class="ev-tag lifestyle">⚡ LIFESTYLE</span>
+      </div>
+      <span class="ev-badge">COMMUNAUTÉ</span>
+      <h3 class="ev-title">ADIDAS RUNNERS PARIS</h3>
+      <div class="ev-loc">📍 Paris — Sorties hebdomadaires</div>
+      <p class="ev-desc">La communauté running lifestyle de Paris. Sorties hebdomadaires gratuites dans la capitale. L'esprit LUMIRUNNER.</p>
+      <div class="ev-specs">
+        <span class="ev-spec">Gratuit</span>
+        <span class="ev-spec">Tous niveaux</span>
+        <span class="ev-spec">Chaque semaine</span>
+      </div>
+      <div class="ev-cta">adidas.fr/adidas-runners →</div>
+    </div>
+  </a>
+
+  <!-- ROC D'AZUR -->
+  <a href="https://www.rocazur.com" target="_blank" rel="noopener" class="ev-card" data-sport="vtt" aria-label="Roc d'Azur 2026">
+    <div class="ev-card-inner">
+      <div class="ev-top">
+        <span class="ev-date">8-11 OCTOBRE 2026</span>
+        <span class="ev-tag vtt">🚵 VTT</span>
+      </div>
+      <span class="ev-badge">1ER ÉVÉNEMENT VTT MONDIAL</span>
+      <h3 class="ev-title">ROC D'AZUR</h3>
+      <div class="ev-loc">📍 Fréjus, Var</div>
+      <p class="ev-desc">Le premier festival VTT au monde. Compétitions, salon, animations. Marathon, XCM, enduro. Ambiance unique.</p>
+      <div class="ev-specs">
+        <span class="ev-spec">Festival VTT</span>
+        <span class="ev-spec">Compétitions & Salon</span>
+        <span class="ev-spec">Fréjus</span>
+      </div>
+      <div class="ev-cta">rocazur.com →</div>
+    </div>
+  </a>
+
+  <!-- HYROX PARIS DECEMBRE -->
+  <a href="https://hyrox.com" target="_blank" rel="noopener" class="ev-card" data-sport="hyrox" aria-label="HYROX Paris Décembre 2026">
+    <div class="ev-card-inner">
+      <div class="ev-top">
+        <span class="ev-date">12-20 DÉC. 2026</span>
+        <span class="ev-tag hyrox">🏋️ HYROX</span>
+      </div>
+      <span class="ev-badge">2ÈME ÉTAPE PARIS</span>
+      <h3 class="ev-title">HYROX PARIS — PORTE DE VERSAILLES</h3>
+      <div class="ev-loc">📍 Paris Expo Porte de Versailles</div>
+      <p class="ev-desc">Deuxième étape parisienne de la saison HYROX 2026. Fin de saison explosive à Paris Expo.</p>
+      <div class="ev-specs">
+        <span class="ev-spec">8km + 8 stations</span>
+        <span class="ev-spec">Tous formats</span>
+        <span class="ev-spec">Fin de saison</span>
+      </div>
+      <div class="ev-cta">hyrox.com →</div>
+    </div>
+  </a>
+
+  <!-- GRANDE COURSE SAINT-DENIS -->
+  <a href="https://lesvoiesroyales-saintdenis.fr" target="_blank" rel="noopener" class="ev-card" data-sport="running" aria-label="Les Voies Royales Saint-Denis">
+    <div class="ev-card-inner">
+      <div class="ev-top">
+        <span class="ev-date">25-26 OCTOBRE 2026</span>
+        <span class="ev-tag running">🏃 RUNNING</span>
+      </div>
+      <span class="ev-badge">ARRIVÉE STADE DE FRANCE</span>
+      <h3 class="ev-title">LES VOIES ROYALES SAINT-DENIS</h3>
+      <div class="ev-loc">📍 Saint-Denis — Stade de France</div>
+      <p class="ev-desc">Marathon, semi, 10km, 5km avec arrivée sur la piste du Stade de France. Éco-responsable et inclusif.</p>
+      <div class="ev-specs">
+        <span class="ev-spec">Marathon · Semi · 10km</span>
+        <span class="ev-spec">Stade de France</span>
+        <span class="ev-spec">Éco-responsable</span>
+      </div>
+      <div class="ev-cta">lesvoiesroyales-saintdenis.fr →</div>
+    </div>
+  </a>
+
+  <!-- PARKRUN FRANCE -->
+  <a href="https://www.parkrun.fr" target="_blank" rel="noopener" class="ev-card" data-sport="lifestyle" aria-label="Parkrun France">
+    <div class="ev-card-inner">
+      <div class="ev-top">
+        <span class="ev-date">CHAQUE SAMEDI 9H</span>
+        <span class="ev-tag lifestyle">⚡ LIFESTYLE</span>
+      </div>
+      <span class="ev-badge">GRATUIT PARTOUT EN FRANCE</span>
+      <h3 class="ev-title">PARKRUN FRANCE</h3>
+      <div class="ev-loc">📍 Partout en France</div>
+      <p class="ev-desc">5km chronométré gratuit chaque samedi matin. Tous niveaux, tous âges. La communauté running la plus accessible.</p>
+      <div class="ev-specs">
+        <span class="ev-spec">5 km</span>
+        <span class="ev-spec">Gratuit</span>
+        <span class="ev-spec">Chaque samedi</span>
+      </div>
+      <div class="ev-cta">parkrun.fr →</div>
+    </div>
+  </a>
+
+</div>
+```
+
+  </div>
+
+  <!-- Note mise à jour -->
+
+  <p style="text-align:center;font-family:var(--font-m);font-size:8px;color:rgba(0,0,0,0.25);letter-spacing:2px;margin-top:32px;padding:0 40px">
+    📅 CALENDRIER MIS À JOUR RÉGULIÈREMENT · LIENS OFFICIELS VÉRIFIÉS · MAI 2026
+  </p>
+
+</section>
+
+<!-- CSS événements -->
+
+<style>
+.ev-filter{
+  background:var(--beige2);border:1px solid rgba(0,0,0,0.1);
+  color:rgba(0,0,0,0.4);padding:8px 18px;
+  font-family:var(--font-m);font-size:8px;letter-spacing:1.5px;
+  cursor:pointer;transition:all 0.2s;text-transform:uppercase;
+}
+.ev-filter:hover{border-color:var(--rouge);color:var(--rouge)}
+.ev-filter.active{background:var(--noir);color:var(--blanc);border-color:var(--noir)}
+
+.ev-card{
+  background:var(--blanc-casse);text-decoration:none;display:block;
+  transition:all 0.3s;position:relative;overflow:hidden;
+}
+.ev-card:hover{background:var(--blanc);transform:translateY(-2px)}
+.ev-card::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:var(--rouge);transform:scaleX(0);transition:transform 0.3s;
+  transform-origin:left;
+}
+.ev-card:hover::after{transform:scaleX(1)}
+.ev-card-inner{padding:28px}
+
+.ev-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px}
+.ev-date{font-family:var(--font-m);font-size:9px;letter-spacing:1px;color:rgba(0,0,0,0.35)}
+.ev-tag{font-family:var(--font-m);font-size:7px;letter-spacing:1px;padding:4px 10px}
+.ev-tag.running{background:rgba(0,100,255,0.08);color:#0055CC}
+.ev-tag.trail{background:rgba(0,120,0,0.08);color:#005500}
+.ev-tag.vtt{background:rgba(150,75,0,0.08);color:#7B3F00}
+.ev-tag.hyrox{background:rgba(204,0,0,0.08);color:var(--rouge)}
+.ev-tag.lifestyle{background:rgba(0,0,0,0.06);color:rgba(0,0,0,0.5)}
+
+.ev-badge{
+  display:inline-block;font-family:var(--font-m);font-size:7px;
+  letter-spacing:2px;color:var(--rouge);background:rgba(204,0,0,0.06);
+  padding:3px 10px;margin-bottom:10px;
+}
+.ev-passed{
+  display:inline-block;font-family:var(--font-m);font-size:7px;
+  letter-spacing:2px;color:rgba(0,0,0,0.3);background:rgba(0,0,0,0.05);
+  padding:3px 10px;margin-bottom:10px;
+}
+.ev-title{font-family:var(--font-d);font-size:20px;color:var(--noir);letter-spacing:1px;margin-bottom:8px;line-height:1.1}
+.ev-loc{font-family:var(--font-m);font-size:9px;color:rgba(0,0,0,0.4);margin-bottom:10px;letter-spacing:0.5px}
+.ev-desc{font-size:12px;color:rgba(0,0,0,0.5);line-height:1.7;margin-bottom:14px}
+.ev-specs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.ev-spec{font-family:var(--font-m);font-size:7px;letter-spacing:1px;border:1px solid rgba(0,0,0,0.1);padding:3px 8px;color:rgba(0,0,0,0.4)}
+.ev-cta{font-family:var(--font-m);font-size:8px;letter-spacing:2px;color:var(--rouge)}
+
+.ev-card.hidden{display:none}
+
+@media(max-width:520px){
+  .ev-card-inner{padding:20px}
+  .ev-title{font-size:18px}
+}
+</style>
+
+<!-- JS filtres événements -->
+
+<script>
+function filterEvents(sport, btn){
+  document.querySelectorAll('.ev-filter').forEach(b=>{
+    b.classList.remove('active');b.setAttribute('aria-selected','false');
+  });
+  btn.classList.add('active');btn.setAttribute('aria-selected','true');
+  document.querySelectorAll('.ev-card').forEach(card=>{
+    if(sport==='all'||card.dataset.sport===sport){
+      card.classList.remove('hidden');
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+}
+</script>
+
 <!-- CTA FINAL -->
 
 <section id="cta-final" aria-labelledby="cta-title">
