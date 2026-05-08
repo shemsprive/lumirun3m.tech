@@ -1191,7 +1191,28 @@ body{background:var(--blanc-casse);color:var(--noir);font-family:var(--font-b);o
 a,button{cursor:pointer}
 img{max-width:100%;height:auto;display:block}
 
-/* ═══ COOKIE BANNER ═══ */
+/* ═══ SPORTS NAV ═══ */
+.sport-nav-btn{
+  background:var(--noir2);border:1px solid rgba(255,255,255,0.06);
+  color:rgba(255,255,255,0.35);padding:10px 20px;
+  font-family:var(--font-m);font-size:9px;letter-spacing:1.5px;
+  cursor:pointer;transition:all 0.3s;text-transform:uppercase;
+  white-space:nowrap;
+}
+.sport-nav-btn:hover{border-color:rgba(204,0,0,0.3);color:rgba(255,255,255,0.7)}
+.sport-nav-btn.active{background:var(--rouge);border-color:var(--rouge);color:var(--blanc)}
+.sport-panel{animation:fadeIn 0.4s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:768px){
+  .sport-nav-btn{font-size:8px;padding:8px 12px}
+  #sports-hub .s-td{font-size:clamp(36px,9vw,60px)}
+  #sports-hub [style*="grid-template-columns:1fr 1fr"]{
+    display:block!important;
+  }
+  #sports-hub [style*="grid-template-columns:1fr 1fr"] > div:last-child{
+    margin-top:32px;
+  }
+}
 #cookie{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:var(--noir);border-top:1px solid rgba(255,255,255,0.08);padding:20px 40px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;transform:translateY(100%);animation:slideUp 0.5s 1.5s var(--ease) forwards}
 @keyframes slideUp{to{transform:translateY(0)}}
 #cookie.hidden{display:none!important}
@@ -2168,6 +2189,390 @@ footer{background:#000;padding:60px 40px 32px;border-top:1px solid rgba(255,255,
   </div>
 </section>
 
+<!-- ═══════════════════════════════════════════════════
+  SECTION SPORTS IMMERSIFS — VTT · Kayak · HYROX · Trail · Alpinisme · Triathlon
+  Chaque sport = univers visuel + outils dédiés + liens affiliés
+════════════════════════════════════════════════════ -->
+
+<section id="sports-hub" style="background:var(--noir);padding:100px 0;overflow:hidden" aria-labelledby="sports-hub-title">
+
+  <!-- Header -->
+
+  <div style="padding:0 40px;max-width:1200px;margin:0 auto 60px" class="rv">
+    <div class="s-tag">// Tous tes sports · Tous tes créneaux</div>
+    <h2 class="s-td" id="sports-hub-title">EXPLORE<br><em>TON TERRAIN.</em></h2>
+    <p class="s-sub-d">LumiRun 3M couvre tous les sports nocturnes. Chaque discipline a ses spécificités — voilà les outils et guides dédiés.</p>
+  </div>
+
+  <!-- Navigation sports -->
+
+  <div style="display:flex;gap:2px;padding:0 40px;max-width:1200px;margin:0 auto 60px;flex-wrap:wrap" class="rv" role="tablist" aria-label="Sélection du sport">
+    <button class="sport-nav-btn active" onclick="showSport('vtt',this)" role="tab" aria-selected="true" aria-controls="sport-vtt">🚵 VTT NUIT</button>
+    <button class="sport-nav-btn" onclick="showSport('kayak',this)" role="tab" aria-selected="false" aria-controls="sport-kayak">🚣 KAYAK</button>
+    <button class="sport-nav-btn" onclick="showSport('hyrox',this)" role="tab" aria-selected="false" aria-controls="sport-hyrox">🏋️ HYROX</button>
+    <button class="sport-nav-btn" onclick="showSport('trail',this)" role="tab" aria-selected="false" aria-controls="sport-trail">🏔️ TRAIL</button>
+    <button class="sport-nav-btn" onclick="showSport('alpi',this)" role="tab" aria-selected="false" aria-controls="sport-alpi">🧗 ALPINISME</button>
+    <button class="sport-nav-btn" onclick="showSport('tri',this)" role="tab" aria-selected="false" aria-controls="sport-tri">🏊 TRIATHLON</button>
+  </div>
+
+  <!-- ── VTT NOCTURNE ── -->
+
+  <div id="sport-vtt" class="sport-panel" role="tabpanel" aria-labelledby="vtt-title">
+    <div style="max-width:1200px;margin:0 auto;padding:0 40px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start">
+        <div>
+          <div style="font-family:var(--font-m);font-size:8px;letter-spacing:3px;color:rgba(204,0,0,0.8);margin-bottom:12px">// VTT NOCTURNE · ENDURO · XC</div>
+          <h3 id="vtt-title" style="font-family:var(--font-d);font-size:clamp(44px,7vw,80px);line-height:0.85;color:var(--blanc);margin-bottom:20px">VTT<br><em style="color:var(--rouge)">DE NUIT.</em></h3>
+          <p style="font-size:14px;color:rgba(255,255,255,0.42);line-height:1.9;margin-bottom:28px;font-weight:300">Le VTT nocturne c'est une autre dimension. Forêts désertes, chemins techniques, sensations amplifiées. Mais être visible reste le défi numéro un — pour toi comme pour les autres usagers.</p>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:28px">
+            <div style="display:flex;gap:12px;align-items:center;padding:10px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05)">
+              <span style="color:var(--rouge);font-size:16px">→</span>
+              <span style="font-size:13px;color:rgba(255,255,255,0.5)">Visibilité 360° indispensable — autres riders + véhicules forestiers</span>
+            </div>
+            <div style="display:flex;gap:12px;align-items:center;padding:10px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05)">
+              <span style="color:var(--rouge);font-size:16px">→</span>
+              <span style="font-size:13px;color:rgba(255,255,255,0.5)">IPX7 certifié — boue, pluie, projections</span>
+            </div>
+            <div style="display:flex;gap:12px;align-items:center;padding:10px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05)">
+              <span style="color:var(--rouge);font-size:16px">→</span>
+              <span style="font-size:13px;color:rgba(255,255,255,0.5)">GPS SOS — zones isolées sans réseau</span>
+            </div>
+            <div style="display:flex;gap:12px;align-items:center;padding:10px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05)">
+              <span style="color:var(--rouge);font-size:16px">→</span>
+              <span style="font-size:13px;color:rgba(255,255,255,0.5)">Poids minimal — moins de 280g pour ne pas gêner le pilotage</span>
+            </div>
+          </div>
+        </div>
+        <!-- Outil VTT -->
+        <div style="background:var(--noir2);border:1px solid rgba(255,255,255,0.06);padding:32px">
+          <div style="font-family:var(--font-m);font-size:8px;letter-spacing:2px;color:var(--rouge);margin-bottom:16px">// OUTIL VTT — AUTONOMIE & DISTANCE</div>
+          <h4 style="font-family:var(--font-d);font-size:24px;color:var(--blanc);margin-bottom:8px;letter-spacing:1px">CALCULATEUR VTT NOCTURNE</h4>
+          <p style="font-size:12px;color:rgba(255,255,255,0.35);margin-bottom:20px;line-height:1.6">Estime ton temps de sortie, l'autonomie nécessaire et le niveau de risque selon ton profil.</p>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px">
+            <div><label style="font-family:var(--font-m);font-size:8px;letter-spacing:2px;color:rgba(255,255,255,0.3);display:block;margin-bottom:4px">DISTANCE PRÉVUE (KM)</label><input type="number" id="vtt-dist" placeholder="25" min="1" max="200" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:var(--blanc);padding:10px 14px;font-size:14px;width:100%;outline:none"></div>
+            <div><label style="font-family:var(--font-m);font-size:8px;letter-spacing:2px;color:rgba(255,255,255,0.3);display:block;margin-bottom:4px">DÉNIVELÉ POSITIF (M)</label><input type="number" id="vtt-dplus" placeholder="800" min="0" max="5000" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:var(--blanc);padding:10px 14px;font-size:14px;width:100%;outline:none"></div>
+            <div><label style="font-family:var(--font-m);font-size:8px;letter-spacing:2px;color:rgba(255,255,255,0.3);display:block;margin-bottom:4px">NIVEAU TECHNIQUE</label>
+              <select id="vtt-niv" style="background:var(--noir2);border:1px solid rgba(255,255,255,0.1);color:var(--blanc);padding:10px 14px;font-size:14px;width:100%;outline:none">
+                <option value="deb">Débutant — chemins verts/bleus</option>
+                <option value="int" selected>Intermédiaire — rouge</option>
+                <option value="adv">Expert — noir/enduro</option>
+              </select>
+            </div>
+          </div>
+          <button onclick="calcVTT()" style="background:var(--rouge);color:var(--blanc);border:none;padding:12px 20px;font-family:var(--font-m);font-size:9px;letter-spacing:2px;cursor:pointer;width:100%;text-transform:uppercase;transition:background 0.2s" onmouseover="this.style.background='#FF0000'" onmouseout="this.style.background='#CC0000'">CALCULER →</button>
+          <div id="vtt-res" style="display:none;margin-top:16px;padding:18px;background:rgba(0,0,0,0.4)">
+            <div style="font-family:var(--font-d);font-size:36px;color:var(--blanc);line-height:1" id="vtt-time">—</div>
+            <div style="font-family:var(--font-m);font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:2px;margin-bottom:12px">DURÉE ESTIMÉE</div>
+            <div style="display:flex;flex-direction:column;gap:6px" id="vtt-details"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── KAYAK ── -->
+
+  <div id="sport-kayak" class="sport-panel" style="display:none" role="tabpanel" aria-labelledby="kayak-title">
+    <div style="max-width:1200px;margin:0 auto;padding:0 40px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start">
+        <div>
+          <div style="font-family:var(--font-m);font-size:8px;letter-spacing:3px;color:rgba(204,0,0,0.8);margin-bottom:12px">// KAYAK · PADDLE · NAUTIQUE</div>
+          <h3 id="kayak-title" style="font-family:var(--font-d);font-size:clamp(44px,7vw,80px);line-height:0.85;color:var(--blanc);margin-bottom:20px">KAYAK<br><em style="color:var(--rouge)">NOCTURNE.</em></h3>
+          <p style="font-size:14px;color:rgba(255,255,255,0.42);line-height:1.9;margin-bottom:28px;font-weight:300">Eau noire, ciel étoilé, silence total. Le kayak nocturne est l'une des expériences les plus intenses qu'on puisse vivre. La réglementation maritime impose une signalisation lumineuse — LumiRun 3M y répond parfaitement.</p>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:28px">
+            <div style="display:flex;gap:12px;align-items:center;padding:10px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05)">
+              <span style="color:var(--rouge);font-size:16px">→</span>
+              <span style="font-size:13px;color:rgba(255,255,255,0.5)">Réglementation maritime — signalisation 360° obligatoire de nuit</span>
+            </div>
+            <div style="display:flex;gap:12px;align-items:center;padding:10px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05)">
+              <span style="color:var(--rouge);font-size:16px">→</span>
+              <span style="font-size:13px;color:rgba(255,255,255,0.5)">IPX7 — immersion totale, eau de mer, projections</span>
+            </div>
+            <div style="display:flex;gap:12px;align-items:center;padding:10px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05)">
+              <span style="color:var(--rouge);font-size:16px">→</span>
+              <span style="font-size:13px;color:rgba(255,255,255,0.5)">SOS GPS — position envoyée aux secours en 3 secondes</span>
+            </div>
+            <div style="display:flex;gap:12px;align-items:center;padding:10px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05)">
+              <span style="color:var(--rouge);font-size:16px">→</span>
+              <span style="font-size:13px;color:rgba(255,255,255,0.5)">LEDs visibles par les bateaux à moteur — distance critique</span>
+            </div>
+          </div>
+        </div>
+        <!-- Outil Kayak -->
+        <div style="background:var(--noir2);border:1px solid rgba(255,255,255,0.06);padding:32px">
+          <div style="font-family:var(--font-m);font-size:8px;letter-spacing:2px;color:var(--rouge);margin-bottom:16px">// OUTIL KAYAK — SÉCURITÉ NAUTIQUE</div>
+          <h4 style="font-family:var(--font-d);font-size:24px;color:var(--blanc);margin-bottom:8px;letter-spacing:1px">ÉVALUATEUR SÉCURITÉ KAYAK</h4>
+          <p style="font-size:12px;color:rgba(255,255,255,0.35);margin-bottom:20px;line-height:1.6">Score de sécurité pour ta sortie kayak nocturne selon tes conditions et équipement.</p>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px">
+            <div><label style="font-family:var(--font-m);font-size:8px;letter-spacing:2px;color:rgba(255,255,255,0.3);display:block;margin-bottom:4px">TYPE DE NAVIGATION</label>
+              <select id="kayak-type" style="background:var(--noir2);border:1px solid rgba(255,255,255,0.1);color:var(--blanc);padding:10px 14px;font-size:14px;width:100%;outline:none">
+                <option value="lac">Lac / Rivière calme</option>
+                <option value="mer" selected>Mer / Côte</option>
+                <option value="rapide">Rivière rapide</option>
+              </select>
+            </div>
+            <div><label style="font-family:var(--font-m);font-size:8px;letter-spacing:2px;color:rgba(255,255,255,0.3);display:block;margin-bottom:4px">SIGNALISATION LUMINEUSE</label>
+              <select id="kayak-light" style="background:var(--noir2);border:1px solid rgba(255,255,255,0.1);color:var(--blanc);padding:10px 14px;font-size:14px;width:100%;outline:none">
+                <option value="0">Aucune</option>
+                <option value="1">Lampe frontale uniquement</option>
+                <option value="2">Feu blanc 360° fixe</option>
+                <option value="3">LEDs + réfléchissant 3M 360°</option>
+              </select>
+            </div>
+            <div><label style="font-family:var(--font-m);font-size:8px;letter-spacing:2px;color:rgba(255,255,255,0.3);display:block;margin-bottom:4px">DISPOSITIF DE SECOURS</label>
+              <select id="kayak-sos" style="background:var(--noir2);border:1px solid rgba(255,255,255,0.1);color:var(--blanc);padding:10px 14px;font-size:14px;width:100%;outline:none">
+                <option value="0">Aucun</option>
+                <option value="1">Téléphone portable</option>
+                <option value="2">VHF marine</option>
+                <option value="3">GPS autonome + SOS</option>
+              </select>
+            </div>
+          </div>
+          <button onclick="calcKayak()" style="background:var(--rouge);color:var(--blanc);border:none;padding:12px 20px;font-family:var(--font-m);font-size:9px;letter-spacing:2px;cursor:pointer;width:100%;text-transform:uppercase;transition:background 0.2s" onmouseover="this.style.background='#FF0000'" onmouseout="this.style.background='#CC0000'">ÉVALUER →</button>
+          <div id="kayak-res" style="display:none;margin-top:16px;padding:18px;background:rgba(0,0,0,0.4)">
+            <div style="font-family:var(--font-d);font-size:52px;color:var(--blanc);line-height:1" id="kayak-score">—</div>
+            <div style="font-family:var(--font-m);font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:2px;margin-bottom:12px">SCORE SÉCURITÉ / 100</div>
+            <div style="display:flex;flex-direction:column;gap:4px" id="kayak-tips"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── HYROX ── -->
+
+  <div id="sport-hyrox" class="sport-panel" style="display:none" role="tabpanel" aria-labelledby="hyrox-title">
+    <div style="max-width:1200px;margin:0 auto;padding:0 40px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start">
+        <div>
+          <div style="font-family:var(--font-m);font-size:8px;letter-spacing:3px;color:rgba(204,0,0,0.8);margin-bottom:12px">// HYROX · FITNESS FONCTIONNEL · COMPÉTITION</div>
+          <h3 id="hyrox-title" style="font-family:var(--font-d);font-size:clamp(44px,7vw,80px);line-height:0.85;color:var(--blanc);margin-bottom:20px">HYROX.<br><em style="color:var(--rouge)">EVERY REP.</em></h3>
+          <p style="font-size:14px;color:rgba(255,255,255,0.42);line-height:1.9;margin-bottom:28px;font-weight:300">8km de running + 8 stations de workout. La majorité des athlètes HYROX s'entraînent tôt le matin ou tard le soir — dans des conditions de faible luminosité. LumiRun 3M pèse moins de 280g. Tu ne le sentiras pas pendant tes sessions.</p>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:28px">
+            <div style="display:flex;gap:12px;align-items:center;padding:10px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05)">
+              <span style="color:var(--rouge);font-size:16px">→</span>
+              <span style="font-size:13px;color:rgba(255,255,255,0.5)">150 000 participants mondiaux en 2024 — croissance 40%/an</span>
+            </div>
+            <div style="display:flex;gap:12px;align-items:center;padding:10px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05)">
+              <span style="color:var(--rouge);font-size:16px">→</span>
+              <span style="font-size:13px;color:rgba(255,255,255,0.5)">Entraînements majoritairement 5h-7h ou 19h-22h</span>
+            </div>
+            <div style="display:flex;gap:12px;align-items:center;padding:10px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05)">
+              <span style="color:var(--rouge);font-size:16px">→</span>
+              <span style="font-size:13px;color:rgba(255,255,255,0.5)">Moins de 280g — aucune gêne sur les mouvements fonctionnels</span>
+            </div>
+          </div>
+        </div>
+        <!-- Outil HYROX avancé -->
+        <div style="background:var(--noir2);border:1px solid rgba(255,255,255,0.06);padding:32px">
+          <div style="font-family:var(--font-m);font-size:8px;letter-spacing:2px;color:var(--rouge);margin-bottom:16px">// OUTIL HYROX — SIMULATEUR COMPLET</div>
+          <h4 style="font-family:var(--font-d);font-size:24px;color:var(--blanc);margin-bottom:8px;letter-spacing:1px">SIMULATEUR HYROX PRO</h4>
+          <p style="font-size:12px;color:rgba(255,255,255,0.35);margin-bottom:20px;line-height:1.6">Temps détaillé par station + recommandations d'amélioration.</p>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px">
+            <div><label style="font-family:var(--font-m);font-size:8px;letter-spacing:2px;color:rgba(255,255,255,0.3);display:block;margin-bottom:4px">ALLURE RUNNING (MIN/KM)</label><input type="number" id="hx2-pace" placeholder="5.30" min="3" max="12" step="0.1" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:var(--blanc);padding:10px 14px;font-size:14px;width:100%;outline:none"></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+              <div><label style="font-family:var(--font-m);font-size:8px;letter-spacing:2px;color:rgba(255,255,255,0.3);display:block;margin-bottom:4px">SKI ERG (CAL)</label><input type="number" id="hx2-ski" placeholder="50" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:var(--blanc);padding:10px 14px;font-size:14px;width:100%;outline:none"></div>
+              <div><label style="font-family:var(--font-m);font-size:8px;letter-spacing:2px;color:rgba(255,255,255,0.3);display:block;margin-bottom:4px">ROW (CAL)</label><input type="number" id="hx2-row" placeholder="50" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:var(--blanc);padding:10px 14px;font-size:14px;width:100%;outline:none"></div>
+            </div>
+            <div><label style="font-family:var(--font-m);font-size:8px;letter-spacing:2px;color:rgba(255,255,255,0.3);display:block;margin-bottom:4px">CATÉGORIE</label>
+              <select id="hx2-cat" style="background:var(--noir2);border:1px solid rgba(255,255,255,0.1);color:var(--blanc);padding:10px 14px;font-size:14px;width:100%;outline:none">
+                <option value="open">Open</option>
+                <option value="pro">Pro</option>
+                <option value="dbl">Double</option>
+              </select>
+            </div>
+          </div>
+          <button onclick="calcHYROX2()" style="background:var(--rouge);color:var(--blanc);border:none;padding:12px 20px;font-family:var(--font-m);font-size:9px;letter-spacing:2px;cursor:pointer;width:100%;text-transform:uppercase;transition:background 0.2s" onmouseover="this.style.background='#FF0000'" onmouseout="this.style.background='#CC0000'">SIMULER →</button>
+          <div id="hx2-res" style="display:none;margin-top:16px;padding:18px;background:rgba(0,0,0,0.4)">
+            <div style="font-family:var(--font-d);font-size:42px;color:var(--blanc);line-height:1" id="hx2-time">—</div>
+            <div style="font-family:var(--font-m);font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:2px;margin-bottom:12px">TEMPS TOTAL ESTIMÉ</div>
+            <div style="display:flex;flex-direction:column;gap:4px" id="hx2-details"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── TRAIL ── -->
+
+  <div id="sport-trail" class="sport-panel" style="display:none" role="tabpanel" aria-labelledby="trail-title">
+    <div style="max-width:1200px;margin:0 auto;padding:0 40px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start">
+        <div>
+          <div style="font-family:var(--font-m);font-size:8px;letter-spacing:3px;color:rgba(204,0,0,0.8);margin-bottom:12px">// TRAIL · ULTRA · MONTAGNE</div>
+          <h3 id="trail-title" style="font-family:var(--font-d);font-size:clamp(44px,7vw,80px);line-height:0.85;color:var(--blanc);margin-bottom:20px">TRAIL<br><em style="color:var(--rouge)">NOCTURNE.</em></h3>
+          <p style="font-size:14px;color:rgba(255,255,255,0.42);line-height:1.9;margin-bottom:28px;font-weight:300">74% des runners pratiquent le trail. Les formats ultra impliquent systématiquement des heures de nuit. UTMB, Grand Raid, Diagonale des Fous — tous passent par l'obscurité. L'équipement peut sauver des vies.</p>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:28px">
+            <div style="display:flex;gap:12px;align-items:center;padding:10px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05)">
+              <span style="color:var(--rouge);font-size:16px">→</span>
+              <span style="font-size:13px;color:rgba(255,255,255,0.5)">Zones isolées — SOS GPS vital en cas de chute ou blessure</span>
+            </div>
+            <div style="display:flex;gap:12px;align-items:center;padding:10px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05)">
+              <span style="color:var(--rouge);font-size:16px">→</span>
+              <span style="font-size:13px;color:rgba(255,255,255,0.5)">Visibilité aux autres coureurs et bénévoles de nuit</span>
+            </div>
+            <div style="display:flex;gap:12px;align-items:center;padding:10px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05)">
+              <span style="color:var(--rouge);font-size:16px">→</span>
+              <span style="font-size:13px;color:rgba(255,255,255,0.5)">Moins de 280g — crucial sur les longues distances</span>
+            </div>
+          </div>
+        </div>
+        <!-- Outil Trail -->
+        <div style="background:var(--noir2);border:1px solid rgba(255,255,255,0.06);padding:32px">
+          <div style="font-family:var(--font-m);font-size:8px;letter-spacing:2px;color:var(--rouge);margin-bottom:16px">// OUTIL TRAIL — TEMPS & DÉNIVELÉ</div>
+          <h4 style="font-family:var(--font-d);font-size:24px;color:var(--blanc);margin-bottom:8px;letter-spacing:1px">CALCULATEUR TRAIL</h4>
+          <p style="font-size:12px;color:rgba(255,255,255,0.35);margin-bottom:20px;line-height:1.6">Temps estimé, allure adaptée au dénivelé, autonomie nécessaire.</p>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+              <div><label style="font-family:var(--font-m);font-size:8px;letter-spacing:2px;color:rgba(255,255,255,0.3);display:block;margin-bottom:4px">DISTANCE (KM)</label><input type="number" id="trail-dist" placeholder="42" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:var(--blanc);padding:10px 14px;font-size:14px;width:100%;outline:none"></div>
+              <div><label style="font-family:var(--font-m);font-size:8px;letter-spacing:2px;color:rgba(255,255,255,0.3);display:block;margin-bottom:4px">D+ (M)</label><input type="number" id="trail-dplus" placeholder="2500" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:var(--blanc);padding:10px 14px;font-size:14px;width:100%;outline:none"></div>
+            </div>
+            <div><label style="font-family:var(--font-m);font-size:8px;letter-spacing:2px;color:rgba(255,255,255,0.3);display:block;margin-bottom:4px">TON NIVEAU</label>
+              <select id="trail-niv" style="background:var(--noir2);border:1px solid rgba(255,255,255,0.1);color:var(--blanc);padding:10px 14px;font-size:14px;width:100%;outline:none">
+                <option value="deb">Débutant trail</option>
+                <option value="int" selected>Intermédiaire</option>
+                <option value="adv">Expert / Ultra</option>
+              </select>
+            </div>
+          </div>
+          <button onclick="calcTrail()" style="background:var(--rouge);color:var(--blanc);border:none;padding:12px 20px;font-family:var(--font-m);font-size:9px;letter-spacing:2px;cursor:pointer;width:100%;text-transform:uppercase;transition:background 0.2s" onmouseover="this.style.background='#FF0000'" onmouseout="this.style.background='#CC0000'">CALCULER →</button>
+          <div id="trail-res" style="display:none;margin-top:16px;padding:18px;background:rgba(0,0,0,0.4)">
+            <div style="font-family:var(--font-d);font-size:36px;color:var(--blanc);line-height:1" id="trail-time">—</div>
+            <div style="font-family:var(--font-m);font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:2px;margin-bottom:12px">TEMPS ESTIMÉ</div>
+            <div style="display:flex;flex-direction:column;gap:4px" id="trail-details"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ALPINISME ── -->
+
+  <div id="sport-alpi" class="sport-panel" style="display:none" role="tabpanel" aria-labelledby="alpi-title">
+    <div style="max-width:1200px;margin:0 auto;padding:0 40px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start">
+        <div>
+          <div style="font-family:var(--font-m);font-size:8px;letter-spacing:3px;color:rgba(204,0,0,0.8);margin-bottom:12px">// ALPINISME · VIA FERRATA · RANDO NOCTURNE</div>
+          <h3 id="alpi-title" style="font-family:var(--font-d);font-size:clamp(44px,7vw,80px);line-height:0.85;color:var(--blanc);margin-bottom:20px">ALPI<br><em style="color:var(--rouge)">NOCTURNE.</em></h3>
+          <p style="font-size:14px;color:rgba(255,255,255,0.42);line-height:1.9;margin-bottom:28px;font-weight:300">Les départs de cordée se font souvent à 2h, 3h du matin pour éviter la chaleur et atteindre le sommet avant les orages. L'obscurité est l'environnement naturel de l'alpiniste. Le GPS SOS peut sauver des vies en zones sans réseau.</p>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:28px">
+            <div style="display:flex;gap:12px;align-items:center;padding:10px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05)">
+              <span style="color:var(--rouge);font-size:16px">→</span>
+              <span style="font-size:13px;color:rgba(255,255,255,0.5)">Départs 2h-4h du matin — obscurité totale en haute montagne</span>
+            </div>
+            <div style="display:flex;gap:12px;align-items:center;padding:10px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05)">
+              <span style="color:var(--rouge);font-size:16px">→</span>
+              <span style="font-size:13px;color:rgba(255,255,255,0.5)">Zones sans réseau — GPS autonome indispensable</span>
+            </div>
+            <div style="display:flex;gap:12px;align-items:center;padding:10px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05)">
+              <span style="color:var(--rouge);font-size:16px">→</span>
+              <span style="font-size:13px;color:rgba(255,255,255,0.5)">Compatible GoPro — points d'attache standard</span>
+            </div>
+          </div>
+        </div>
+        <!-- Outil Alpinisme -->
+        <div style="background:var(--noir2);border:1px solid rgba(255,255,255,0.06);padding:32px">
+          <div style="font-family:var(--font-m);font-size:8px;letter-spacing:2px;color:var(--rouge);margin-bottom:16px">// OUTIL ALPI — AUTONOMIE HAUTE MONTAGNE</div>
+          <h4 style="font-family:var(--font-d);font-size:24px;color:var(--blanc);margin-bottom:8px;letter-spacing:1px">CALCULATEUR ALPINISME</h4>
+          <p style="font-size:12px;color:rgba(255,255,255,0.35);margin-bottom:20px;line-height:1.6">Temps de montée estimé selon l'altitude et le dénivelé. Heure de départ recommandée.</p>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+              <div><label style="font-family:var(--font-m);font-size:8px;letter-spacing:2px;color:rgba(255,255,255,0.3);display:block;margin-bottom:4px">ALT. DÉPART (M)</label><input type="number" id="alpi-start" placeholder="1500" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:var(--blanc);padding:10px 14px;font-size:14px;width:100%;outline:none"></div>
+              <div><label style="font-family:var(--font-m);font-size:8px;letter-spacing:2px;color:rgba(255,255,255,0.3);display:block;margin-bottom:4px">ALT. SOMMET (M)</label><input type="number" id="alpi-end" placeholder="4000" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:var(--blanc);padding:10px 14px;font-size:14px;width:100%;outline:none"></div>
+            </div>
+            <div><label style="font-family:var(--font-m);font-size:8px;letter-spacing:2px;color:rgba(255,255,255,0.3);display:block;margin-bottom:4px">HEURE D'ARRIVÉE SOUHAITÉE AU SOMMET</label><input type="time" id="alpi-arrive" value="07:00" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:var(--blanc);padding:10px 14px;font-size:14px;width:100%;outline:none"></div>
+            <div><label style="font-family:var(--font-m);font-size:8px;letter-spacing:2px;color:rgba(255,255,255,0.3);display:block;margin-bottom:4px">NIVEAU</label>
+              <select id="alpi-niv" style="background:var(--noir2);border:1px solid rgba(255,255,255,0.1);color:var(--blanc);padding:10px 14px;font-size:14px;width:100%;outline:none">
+                <option value="deb">Randonnée alpine</option>
+                <option value="int" selected>Alpinisme F/PD</option>
+                <option value="adv">Alpinisme AD/D+</option>
+              </select>
+            </div>
+          </div>
+          <button onclick="calcAlpi()" style="background:var(--rouge);color:var(--blanc);border:none;padding:12px 20px;font-family:var(--font-m);font-size:9px;letter-spacing:2px;cursor:pointer;width:100%;text-transform:uppercase;transition:background 0.2s" onmouseover="this.style.background='#FF0000'" onmouseout="this.style.background='#CC0000'">CALCULER →</button>
+          <div id="alpi-res" style="display:none;margin-top:16px;padding:18px;background:rgba(0,0,0,0.4)">
+            <div style="font-family:var(--font-d);font-size:36px;color:var(--blanc);line-height:1" id="alpi-depart">—</div>
+            <div style="font-family:var(--font-m);font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:2px;margin-bottom:12px">HEURE DE DÉPART RECOMMANDÉE</div>
+            <div style="display:flex;flex-direction:column;gap:4px" id="alpi-details"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── TRIATHLON ── -->
+
+  <div id="sport-tri" class="sport-panel" style="display:none" role="tabpanel" aria-labelledby="tri-title">
+    <div style="max-width:1200px;margin:0 auto;padding:0 40px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start">
+        <div>
+          <div style="font-family:var(--font-m);font-size:8px;letter-spacing:3px;color:rgba(204,0,0,0.8);margin-bottom:12px">// TRIATHLON · IRONMAN · SWIMRUN</div>
+          <h3 id="tri-title" style="font-family:var(--font-d);font-size:clamp(44px,7vw,80px);line-height:0.85;color:var(--blanc);margin-bottom:20px">TRIATHLON<br><em style="color:var(--rouge)">TOTAL.</em></h3>
+          <p style="font-size:14px;color:rgba(255,255,255,0.42);line-height:1.9;margin-bottom:28px;font-weight:300">Les formats Ironman et longue distance démarrent à l'aube et finissent parfois de nuit. Les triathlètes sont parmi les athlètes les plus équipés — et les plus exigeants sur la qualité du matériel.</p>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:28px">
+            <div style="display:flex;gap:12px;align-items:center;padding:10px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05)">
+              <span style="color:var(--rouge);font-size:16px">→</span>
+              <span style="font-size:13px;color:rgba(255,255,255,0.5)">Ironman — départ 6h-7h, arrivée parfois après 23h</span>
+            </div>
+            <div style="display:flex;gap:12px;align-items:center;padding:10px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05)">
+              <span style="color:var(--rouge);font-size:16px">→</span>
+              <span style="font-size:13px;color:rgba(255,255,255,0.5)">IPX7 — natation, pluie, conditions extrêmes</span>
+            </div>
+            <div style="display:flex;gap:12px;align-items:center;padding:10px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05)">
+              <span style="color:var(--rouge);font-size:16px">→</span>
+              <span style="font-size:13px;color:rgba(255,255,255,0.5)">Entraînements fractionné en zone 4-5 souvent tôt le matin</span>
+            </div>
+          </div>
+        </div>
+        <!-- Outil Triathlon -->
+        <div style="background:var(--noir2);border:1px solid rgba(255,255,255,0.06);padding:32px">
+          <div style="font-family:var(--font-m);font-size:8px;letter-spacing:2px;color:var(--rouge);margin-bottom:16px">// OUTIL TRIATHLON — TEMPS TOTAL</div>
+          <h4 style="font-family:var(--font-d);font-size:24px;color:var(--blanc);margin-bottom:8px;letter-spacing:1px">CALCULATEUR TRIATHLON</h4>
+          <p style="font-size:12px;color:rgba(255,255,255,0.35);margin-bottom:20px;line-height:1.6">Estime ton temps total selon tes performances par discipline.</p>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px">
+            <div><label style="font-family:var(--font-m);font-size:8px;letter-spacing:2px;color:rgba(255,255,255,0.3);display:block;margin-bottom:4px">FORMAT</label>
+              <select id="tri-format" style="background:var(--noir2);border:1px solid rgba(255,255,255,0.1);color:var(--blanc);padding:10px 14px;font-size:14px;width:100%;outline:none" onchange="updateTriFormat()">
+                <option value="sprint">Sprint — 750m/20km/5km</option>
+                <option value="olympic" selected>Olympique — 1.5km/40km/10km</option>
+                <option value="half">Half Ironman — 1.9km/90km/21km</option>
+                <option value="full">Ironman — 3.8km/180km/42km</option>
+              </select>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
+              <div><label style="font-family:var(--font-m);font-size:7px;letter-spacing:1px;color:rgba(255,255,255,0.3);display:block;margin-bottom:4px">NATATION (min)</label><input type="number" id="tri-swim" placeholder="25" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:var(--blanc);padding:8px;font-size:13px;width:100%;outline:none"></div>
+              <div><label style="font-family:var(--font-m);font-size:7px;letter-spacing:1px;color:rgba(255,255,255,0.3);display:block;margin-bottom:4px">VÉLO (min)</label><input type="number" id="tri-bike" placeholder="65" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:var(--blanc);padding:8px;font-size:13px;width:100%;outline:none"></div>
+              <div><label style="font-family:var(--font-m);font-size:7px;letter-spacing:1px;color:rgba(255,255,255,0.3);display:block;margin-bottom:4px">COURSE (min)</label><input type="number" id="tri-run" placeholder="45" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:var(--blanc);padding:8px;font-size:13px;width:100%;outline:none"></div>
+            </div>
+          </div>
+          <button onclick="calcTri()" style="background:var(--rouge);color:var(--blanc);border:none;padding:12px 20px;font-family:var(--font-m);font-size:9px;letter-spacing:2px;cursor:pointer;width:100%;text-transform:uppercase;transition:background 0.2s" onmouseover="this.style.background='#FF0000'" onmouseout="this.style.background='#CC0000'">CALCULER →</button>
+          <div id="tri-res" style="display:none;margin-top:16px;padding:18px;background:rgba(0,0,0,0.4)">
+            <div style="font-family:var(--font-d);font-size:36px;color:var(--blanc);line-height:1" id="tri-time">—</div>
+            <div style="font-family:var(--font-m);font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:2px;margin-bottom:12px">TEMPS TOTAL ESTIMÉ</div>
+            <div style="display:flex;flex-direction:column;gap:4px" id="tri-details"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LumiRun 3M CTA dans la section sports -->
+
+  <div style="max-width:1200px;margin:48px auto 0;padding:0 40px" class="rv">
+    <div style="background:linear-gradient(135deg,#0A0000,#000);border:1px solid rgba(204,0,0,0.2);padding:36px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+      <div>
+        <div style="font-family:var(--font-m);font-size:8px;letter-spacing:3px;color:var(--rouge);margin-bottom:8px">// LUMIRUN 3M — UN HARNAIS. TOUS LES SPORTS.</div>
+        <p style="font-family:var(--font-d);font-size:28px;color:var(--blanc);letter-spacing:1px;margin-bottom:6px">3M 360° · GPS · SOS · IPX7 · &lt;280g</p>
+        <p style="font-size:13px;color:rgba(255,255,255,0.35);line-height:1.6">VTT · Kayak · HYROX · Trail · Alpinisme · Triathlon · Running — Un seul équipement pour tous tes terrains.</p>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;flex-shrink:0">
+        <a href="https://www.ulule.com/lumirun3m" target="_blank" rel="noopener" style="background:var(--rouge);color:var(--blanc);padding:13px 28px;font-family:var(--font-m);font-size:9px;letter-spacing:2px;text-decoration:none;transition:background 0.2s" onmouseover="this.style.background='#FF0000'" onmouseout="this.style.background='#CC0000'">🚀 PRÉCOMMANDE ULULE</a>
+        <a href="https://www.lumirun3m.fr" target="_blank" rel="noopener" style="background:transparent;color:rgba(255,255,255,0.4);padding:12px 24px;font-family:var(--font-m);font-size:9px;letter-spacing:2px;text-decoration:none;border:1px solid rgba(255,255,255,0.12);transition:all 0.2s" onmouseover="this.style.borderColor='rgba(204,0,0,0.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='rgba(255,255,255,0.12)';this.style.color='rgba(255,255,255,0.4)'">En savoir plus →</a>
+      </div>
+    </div>
+  </div>
+
+</section>
+
 <!-- CTA FINAL -->
 
 <section id="cta-final" aria-labelledby="cta-title">
@@ -2824,6 +3229,173 @@ function showError(id, msg){
   el.classList.add('show');
   el.innerHTML=`<div style="font-family:var(--font-m);font-size:10px;color:#FF9500;letter-spacing:1px">⚠ ${msg}</div>`;
   setTimeout(()=>{el.classList.remove('show');el.innerHTML='';},3000);
+}
+
+// ══════════════════════════════════════
+// SPORTS HUB — Navigation & Calculateurs
+// ══════════════════════════════════════
+
+function showSport(sport, btn){
+  document.querySelectorAll('.sport-panel').forEach(p=>p.style.display='none');
+  document.querySelectorAll('.sport-nav-btn').forEach(b=>{
+    b.classList.remove('active');b.setAttribute('aria-selected','false');
+  });
+  document.getElementById('sport-'+sport).style.display='block';
+  btn.classList.add('active');btn.setAttribute('aria-selected','true');
+}
+
+function rrow(label, value, color=''){
+  return `<div style="display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.04)">
+    <span style="font-family:var(--font-m);font-size:8px;letter-spacing:1px;color:rgba(255,255,255,0.28)">${label}</span>
+    <span style="font-size:12px;font-weight:600;color:${color||'var(--blanc)'}">${value}</span>
+  </div>`;
+}
+
+function fmt(totalMin){
+  const h=Math.floor(totalMin/60);
+  const m=Math.floor(totalMin%60);
+  return h>0?`${h}h${String(m).padStart(2,'0')}'`:`${m}'`;
+}
+
+// ── VTT ──
+function calcVTT(){
+  const dist=parseFloat(document.getElementById('vtt-dist')?.value||25);
+  const dplus=parseFloat(document.getElementById('vtt-dplus')?.value||800);
+  const niv=document.getElementById('vtt-niv')?.value||'int';
+  if(!dist||dist<=0) return;
+  // Vitesse base selon niveau (km/h à plat)
+  const speeds={deb:12,int:16,adv:22};
+  const spd=speeds[niv]||16;
+  // Temps plat + temps dénivelé (règle 100m D+ = 15min pour intermédiaire)
+  const dpCoeff={deb:0.25,int:0.18,adv:0.12};
+  const timeFlat=(dist/spd)*60;
+  const timeDplus=dplus*dpCoeff[niv];
+  const total=Math.round(timeFlat+timeDplus);
+  const risk=dplus>1500?'⚠️ Élevé':dplus>800?'Modéré':'Faible';
+  document.getElementById('vtt-time').textContent=fmt(total);
+  document.getElementById('vtt-details').innerHTML=
+    rrow('DISTANCE',''+dist+' km')+
+    rrow('DÉNIVELÉ',''+dplus+' m D+')+
+    rrow('VITESSE MOY.',spd+' km/h')+
+    rrow('TEMPS D+',fmt(timeDplus))+
+    rrow('RISQUE ISOLATION',risk,dplus>1500?'#FF9500':'#34C759')+
+    rrow('LUMIRUN 3M','IPX7 + GPS SOS recommandé','var(--rouge)');
+  document.getElementById('vtt-res').style.display='block';
+}
+
+// ── KAYAK ──
+function calcKayak(){
+  const type=document.getElementById('kayak-type')?.value||'mer';
+  const light=parseInt(document.getElementById('kayak-light')?.value||0);
+  const sos=parseInt(document.getElementById('kayak-sos')?.value||0);
+  // Score pondéré
+  const lightW={lac:35,mer:45,rapide:40};
+  const sosW={lac:25,mer:35,rapide:30};
+  const score=Math.round((light/3)*lightW[type]+(sos/3)*sosW[type]+(type==='lac'?20:10));
+  const clamped=Math.min(100,score);
+  let label='',color='';
+  if(clamped>=80){label='EXCELLENT — Conforme réglementation ✓';color='#34C759'}
+  else if(clamped>=55){label='CORRECT — Améliorations possibles';color='#FF9500'}
+  else if(clamped>=30){label='INSUFFISANT — Risques élevés';color='#FF6B35'}
+  else{label='DANGEREUX — Ne pas partir ⚠️';color='var(--rouge)'}
+  document.getElementById('kayak-score').textContent=clamped+'/100';
+  document.getElementById('kayak-score').style.color=color;
+  document.getElementById('kayak-tips').innerHTML=
+    rrow('TYPE DE NAVIGATION',type.toUpperCase())+
+    rrow('SIGNALISATION',['Aucune','Lampe frontale','Feu blanc 360°','LEDs + 3M'][light],light===3?'#34C759':light===0?'var(--rouge)':'')+
+    rrow('DISPOSITIF SOS',['Aucun','Téléphone','VHF Marine','GPS + SOS'][sos],sos===3?'#34C759':sos===0?'var(--rouge)':'')+
+    rrow('SOLUTION IDÉALE','Harnais LumiRun 3M IPX7 + SOS','var(--rouge)');
+  document.getElementById('kayak-res').style.display='block';
+}
+
+// ── HYROX 2 ──
+function calcHYROX2(){
+  const pace=parseFloat(document.getElementById('hx2-pace')?.value||5.3);
+  const cat=document.getElementById('hx2-cat')?.value||'open';
+  if(!pace||pace<3) return;
+  const runMin=pace*8;
+  const wo={open:38,pro:28,dbl:55};
+  const woMin=wo[cat]||38;
+  const total=Math.round(runMin+woMin+5);
+  const h=Math.floor(total/60),m=Math.floor(total%60);
+  document.getElementById('hx2-time').textContent=`${h}h${String(m).padStart(2,'0')}'`;
+  document.getElementById('hx2-details').innerHTML=
+    rrow('RUNNING 8×1KM',fmt(runMin))+
+    rrow('STATIONS WO',fmt(woMin))+
+    rrow('TRANSITIONS','~5\'')+
+    rrow('CATÉGORIE',cat.toUpperCase(),'var(--rouge)')+
+    rrow('OBJECTIF -10%',`${Math.floor(total*0.9/60)}h${String(Math.floor(total*0.9%60)).padStart(2,'0')}'`,'#34C759');
+  document.getElementById('hx2-res').style.display='block';
+}
+
+// ── TRAIL ──
+function calcTrail(){
+  const dist=parseFloat(document.getElementById('trail-dist')?.value||42);
+  const dplus=parseFloat(document.getElementById('trail-dplus')?.value||2500);
+  const niv=document.getElementById('trail-niv')?.value||'int';
+  if(!dist||dist<=0) return;
+  // Formule Naismith adaptée trail
+  const spd={deb:6,int:8.5,adv:12};
+  const dpCoeff={deb:0.22,int:0.15,adv:0.1};
+  const total=Math.round((dist/spd[niv])*60+dplus*dpCoeff[niv]);
+  const allure=Math.round(total/dist);
+  document.getElementById('trail-time').textContent=fmt(total);
+  document.getElementById('trail-details').innerHTML=
+    rrow('DISTANCE TOTALE',''+dist+' km')+
+    rrow('DÉNIVELÉ',''+dplus+' m D+')+
+    rrow('ALLURE ÉQUIVALENTE',allure+'min/km trail')+
+    rrow('SECTIONS NOCTURNES',total>480?'Oui — équipement nuit requis':'Possible selon départ','var(--rouge)')+
+    rrow('LumiRun 3M','GPS SOS + 3M Scotchlite recommandé','var(--rouge)');
+  document.getElementById('trail-res').style.display='block';
+}
+
+// ── ALPINISME ──
+function calcAlpi(){
+  const start=parseInt(document.getElementById('alpi-start')?.value||1500);
+  const end=parseInt(document.getElementById('alpi-end')?.value||4000);
+  const arrive=document.getElementById('alpi-arrive')?.value||'07:00';
+  const niv=document.getElementById('alpi-niv')?.value||'int';
+  if(!start||!end||end<=start) return;
+  const dplus=end-start;
+  // Vitesse montée selon niveau (m/h D+)
+  const spd={deb:350,int:500,adv:700};
+  const timeMin=Math.round((dplus/spd[niv])*60);
+  // Calculer heure de départ
+  const [arrH,arrM]=arrive.split(':').map(Number);
+  const arrTotalMin=arrH*60+arrM;
+  const departMin=arrTotalMin-timeMin;
+  const dH=Math.floor(departMin/60);
+  const dM=departMin%60;
+  const departStr=`${String(((dH%24)+24)%24).padStart(2,'0')}h${String(Math.abs(dM)).padStart(2,'0')}`;
+  document.getElementById('alpi-depart').textContent=departStr;
+  document.getElementById('alpi-details').innerHTML=
+    rrow('DÉNIVELÉ','+'+dplus+' m')+
+    rrow('DURÉE MONTÉE',fmt(timeMin))+
+    rrow('ARRIVÉE SOUHAITÉE',arrive)+
+    rrow('DÉPART RECOMMANDÉ',departStr,dH<6?'var(--rouge)':'#34C759')+
+    rrow('CONDITIONS','GPS SOS indispensable en haute montagne','var(--rouge)');
+  document.getElementById('alpi-res').style.display='block';
+}
+
+// ── TRIATHLON ──
+function calcTri(){
+  const swim=parseFloat(document.getElementById('tri-swim')?.value||25);
+  const bike=parseFloat(document.getElementById('tri-bike')?.value||65);
+  const run=parseFloat(document.getElementById('tri-run')?.value||45);
+  const format=document.getElementById('tri-format')?.value||'olympic';
+  if(!swim||!bike||!run) return;
+  const t1=3,t2=2;
+  const total=Math.round(swim+bike+run+t1+t2);
+  const formats={sprint:'750m / 20km / 5km',olympic:'1.5km / 40km / 10km',half:'1.9km / 90km / 21km',full:'3.8km / 180km / 42km'};
+  document.getElementById('tri-time').textContent=fmt(total);
+  document.getElementById('tri-details').innerHTML=
+    rrow('FORMAT',formats[format])+
+    rrow('NATATION',fmt(swim))+
+    rrow('VÉLO',fmt(bike))+
+    rrow('COURSE',fmt(run))+
+    rrow('TRANSITIONS',fmt(t1+t2))+
+    rrow('CATÉGORIE ESTIMÉE',total<90?'Elite':total<120?'Compétiteur':total<180?'Amateur':'Finisher','var(--rouge)');
+  document.getElementById('tri-res').style.display='block';
 }
 
 // ══════════════════════════════════════
